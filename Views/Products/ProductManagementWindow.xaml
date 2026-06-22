@@ -1,0 +1,67 @@
+<Window x:Class="auth_app.Views.Products.ProductManagementWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Product Management"
+        Height="500"
+        Width="900">
+
+    <Grid Margin="20">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Button
+            Content="Add Product"
+            Width="120"
+            Height="35"
+            Click="AddButton_Click"/>
+
+        <DataGrid
+            x:Name="ProductsGrid"
+            Grid.Row="1"
+            Margin="0,10,0,0"
+            AutoGenerateColumns="False">
+
+            <DataGrid.Columns>
+
+                <DataGridTextColumn Header="Id" Binding="{Binding Id}"/>
+
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
+
+                <DataGridTextColumn Header="Price" Binding="{Binding Price}"/>
+
+                <DataGridTextColumn Header="Quantity" Binding="{Binding Quantity}"/>
+
+                <DataGridTemplateColumn Header="Actions">
+
+                    <DataGridTemplateColumn.CellTemplate>
+
+                        <DataTemplate>
+
+                            <StackPanel Orientation="Horizontal">
+
+                                <Button
+                                    Content="Edit"
+                                    Margin="0,0,5,0"
+                                    Click="EditButton_Click"/>
+
+                                <Button
+                                    Content="Delete"
+                                    Click="DeleteButton_Click"/>
+
+                            </StackPanel>
+
+                        </DataTemplate>
+
+                    </DataGridTemplateColumn.CellTemplate>
+
+                </DataGridTemplateColumn>
+
+            </DataGrid.Columns>
+
+        </DataGrid>
+
+    </Grid>
+</Window>

@@ -1,0 +1,38 @@
+<Window x:Class="auth_app.Views.Users.UserEditWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Edit User"
+        Height="250"
+        Width="350">
+
+    <Grid Margin="20">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel>
+
+            <TextBlock Text="Username"/>
+
+            <TextBox
+                x:Name="UsernameBox"
+                Margin="0,5,0,10"/>
+
+            <CheckBox
+                x:Name="ActiveCheckBox"
+                Content="Active"/>
+
+            <Button
+                Content="Save"
+                Width="100"
+                Height="30"
+                Margin="0,15,0,0"
+                Click="Save_Click"/>
+
+        </StackPanel>
+
+    </Grid>
+</Window>
